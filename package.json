@@ -2,6 +2,7 @@
   "name": "strapi-plugin-comments",
   "version": "2.2.15",
   "description": "Strapi - Comments plugin",
+  "private": "true",
   "strapi": {
     "name": "comments",
     "displayName": "Comments",
@@ -9,7 +10,6 @@
     "kind": "plugin"
   },
   "scripts": {
-    "prepare": "husky install",
     "publish:latest": "cd build && npm publish --tag latest",
     "prepublish:latest": "npm run clean && npm run build && node build/setup-package.js",
     "build": "tsc && yarn copy-translations",
@@ -86,11 +86,6 @@
       "./**/__tests__/*"
     ],
     "ext": "js,json,ts"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn format && yarn test:unit"
-    }
   },
   "author": {
     "name": "VirtusLab",
